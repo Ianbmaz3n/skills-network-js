@@ -36,7 +36,14 @@ function add_player_message(input_text) {
     obj.append(chat_box)
 }
 
-let game_state = new State()    
+function update_image(image_id,path_to_image) {
+    //use the iamge id to get the <img> object
+    temp = document.getElementById(image_id)
+    //set the src="path_to image" on the object
+    temp.src = path_to_image
+}
+
+let game_state = new State()  
 
 for (const [key, value] of Object.entries(game_state)) {
     game_state.update(key,value);
