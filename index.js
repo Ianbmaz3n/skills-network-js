@@ -5,6 +5,9 @@ class State {
         this.days = 0;
         this.health = 10;
         this.food = 100;
+        this.age = 60;
+        this.name = "Polly";
+        this.money = 9000;
     }
 
     update(name,value) {

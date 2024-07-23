@@ -55,6 +55,12 @@ div {
     grid-area: Avatar;
 }
 
+#Avatar > img {
+    height: 70%;
+    width: 100%;
+    object-fit: cover;
+}
+
 #Image {
     grid-area: Image;
 }
