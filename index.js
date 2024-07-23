@@ -28,6 +28,13 @@ function add_feed_box_computer(input_text) {
     obj.append(chat_box)
 }
 
+function add_feed_box_player(input_text) {
+    obj = document.getElementById("Chat")
+    chat_box = document.createElement("p")
+    chat_box.innerHTML = input_text
+    obj.append(chat_box)
+}
+
 let game_state = new State()    
 
 for (const [key, value] of Object.entries(game_state)) {

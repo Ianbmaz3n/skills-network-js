@@ -13,7 +13,7 @@ body {
                    "People Options Map" 1fr / 20% 1fr 20%;
     background-color: #1f1912;
 }
-                
+
 .element {
     background-color: #48351b;
     color: white;
@@ -80,7 +80,11 @@ div {
     border-radius: 5px;
     background-color: #1f1912;
     width: fit-content;
-    background-color: #1f1912;
+}
+
+/*This will colour the user text only, rest of style inherited from the normal box above*/
+#Chat > p.user_text {
+    background-color: #745736;
 }
 
 #Map {
