@@ -1,0 +1,85 @@
+body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+	display: inline-grid;
+	grid-template: "MainStatus MainStatus MainStatus" 7% 
+                   "Avatar Image Weather" 8% 
+                   "Avatar Image Supplies" 8% 
+                   "Avatar Image Supplies" 20% 
+                   "People Image Supplies" 15% 
+                   "People Chat Supplies" 10% 
+                   "People Chat Map" 20% 
+                   "People Options Map" 1fr / 20% 1fr 20%;
+    background-color: #1f1912;
+}
+                
+.element {
+    background-color: #48351b;
+    color: white;
+}
+
+img {
+    border-radius: 5px;
+    width: 100%;
+    object-fit: cover;
+    height: 100%;
+}
+
+
+div {
+    margin: 3px;
+    border-radius: 5px;
+}
+
+#MainStatus {
+    grid-area: MainStatus;
+    background: salmon;
+}
+
+#Weather {
+    grid-area: Weather;
+    background: salmon;
+}
+
+#Avatar {
+    grid-area: Avatar;
+}
+
+#Image {
+    grid-area: Image;
+}
+
+#Supplies {
+    grid-area: Supplies;
+    background: salmon;
+}
+
+#People {
+    grid-area: People;
+    background: salmon;
+}
+
+#Chat {
+    grid-area: Chat;
+    overflow: scroll;
+    padding: 0px 0px 0px 100px;
+}
+
+#Chat > p {
+    margin: 10px 10px 10px auto;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #1f1912;
+    width: fit-content;
+    background-color: #1f1912;
+}
+
+#Map {
+    grid-area: Map;
+}
+
+#Options {
+    grid-area: Options;
+    background: salmon;
+}
