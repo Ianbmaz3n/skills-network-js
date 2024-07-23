@@ -21,14 +21,14 @@ class State {
     }
 }
 
-function add_feed_box_computer(input_text) {
+function add_computer_message(input_text) {
     obj = document.getElementById("Chat")
     chat_box = document.createElement("p")
     chat_box.innerHTML = input_text
     obj.append(chat_box)
 }
 
-function add_feed_box_player(input_text) {
+function add_player_message(input_text) {
     obj = document.getElementById("Chat")
     chat_box = document.createElement("p")
     chat_box.classList.add("user_text")
