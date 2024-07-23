@@ -1,9 +1,10 @@
 class State {
-    constructor() {
+    constructor() {        
+        this.meal_size = "Med";
+        this.speed = "Fast";
+        this.days = 0;
         this.health = 10;
-        this.field1 = 0;
-        this.field2 = 0;
-        this.field3 = 0;
+        this.food = 100;
     }
 
     update(name,value) {
@@ -20,9 +21,9 @@ class State {
     }
 }
 
-function initialise_game_state() {
-    let game_state = new State()    
-    for (const [key, value] of Object.entries(game_state)) {
-        alert(`${key}: ${value}`);
-      }
-}   
+let game_state = new State()    
+
+for (const [key, value] of Object.entries(game_state)) {
+    game_state.update(key,value);
+}
+   

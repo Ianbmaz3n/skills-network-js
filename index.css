@@ -34,12 +34,21 @@ div {
 
 #MainStatus {
     grid-area: MainStatus;
-    background: salmon;
+    display: flex;
+}
+
+#MainStatus > p {
+    padding: 10px;
+    margin: auto;
 }
 
 #Weather {
     grid-area: Weather;
-    background: salmon;
+    display: flex;
+}
+
+#Weather > p {
+    margin: auto;
 }
 
 #Avatar {
@@ -52,7 +61,6 @@ div {
 
 #Supplies {
     grid-area: Supplies;
-    background: salmon;
 }
 
 #People {
