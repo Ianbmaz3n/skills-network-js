@@ -3,12 +3,13 @@ class State {
         this.meal_size = "Med";
         this.speed = "Fast";
         this.days = 0;
-        this.health = 10;
-        this.food = 50;
+        this.first_aid = 0
+        this.health = 0;
+        this.food = 0;
         this.water = 70;
         this.age = 60;
         this.name = "Polly";
-        this.money = 9000;
+        this.money = 0;
         this.weather = "Calm";
         this.distance_remaining =100 //nautical miles
     }
@@ -143,5 +144,100 @@ function clear_buttons() {
     document.getElementById("Options").innerHTML = ""
 }
 
-clear_buttons()
-add_button("Start the game", start_game)
+function stats_speed() {
+    game_state.update("speed",100)
+    game_state.update("food",40)
+    game_state.update("money",10000)
+    game_state.update("health",50)
+    shop()
+}
+
+function stats_luck() {
+    game_state.update("speed",60)
+    game_state.update("food",100)
+    game_state.update("money",20000)
+    game_state.update("health",100)
+    shop()
+}
+
+function stats_kindness() {
+    game_state.update("speed",60)
+    game_state.update("food",200)
+    game_state.update("money",5000)
+    game_state.update("health",50)
+    shop()
+}
+
+function add_stats() {
+    clear_buttons()
+    add_button("Speed", stats_speed)    
+    add_button("Luck", stats_luck)
+    add_button("Kindness", stats_kindness)
+}
+
+function shop() {
+    clear_buttons()
+    add_button("Buy food (30g)", buy_food)
+    add_button("Buy first aid (50g)", buy_aid)
+    add_button("Buy 10 food (300g)", buy_aid_ten)
+    add_button("Buy 10 first aid (500g)", buy_food_ten)
+    add_button("Start Journey", start_game)
+}
+
+function buy_food() {
+    if (game_state.money >= 30) {
+        game_state.update("food",game_state.food + 1 )
+        game_state.update("money",game_state.money - 30 )    
+        add_player_message("You buy 1 food")
+    } else {
+        add_player_message("You don't have enough money to buy 1 food")
+    }
+}
+
+function buy_aid() {
+    if (game_state.money >= 50) {
+        game_state.update("first_aid",game_state.first_aid + 1 )
+        game_state.update("money",game_state.money - 50 )    
+        add_player_message("You buy 1 first aid")
+    } else {
+        add_player_message("You don't have enough money to buy 1 first aid")
+    }
+}
+
+function buy_food_ten() {
+    if (game_state.money >= 300) {
+        game_state.update("food",game_state.food + 10 )
+        game_state.update("money",game_state.money - 300 )    
+        add_player_message("You buy 10 food")
+    } else {
+        add_player_message("You don't have enough money to buy 10 food")
+    }
+}
+
+function buy_aid_ten() {
+    if (game_state.money >= 500) {
+        game_state.update("food",game_state.food + 10 )
+        game_state.update("money",game_state.money - 500 )    
+        add_computer_message("You buy 10 first aid")
+    } else {
+        add_computer_message("You don't have enough money to buy 10 first aid")
+    }
+}
+
+function start_button() {
+    clear_buttons()
+    add_button("Start the game", start_game)
+}
+
+function game_setup() {
+    add_computer_message("hello, my name is Pop. What is your name, stranger?")
+    //get name
+    add_computer_message(`Nice to meet you ${name}`)
+    add_computer_message(`How old are you?`)    
+    //get age
+    add_computer_message(`Thank you for providing you age ${name}.`)
+    add_computer_message(`Please choose which skills you will have.`)
+    add_stats()
+}
+
+game_setup()

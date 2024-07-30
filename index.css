@@ -71,7 +71,7 @@ div {
 
 #People {
     grid-area: People;
-    background: salmon;
+    overflow: scroll;
 }
 
 #Chat {
@@ -99,5 +99,8 @@ div {
 
 #Options {
     grid-area: Options;
-    background: salmon;
+}
+
+#weather_image {
+    object-fit: contain;
 }

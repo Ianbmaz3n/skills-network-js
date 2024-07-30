@@ -1,50 +1,71 @@
 <html>
-<head>
-    <title>Untitled Game</title>
-    <meta charset="utf-8">
-    <link rel="stylesheet" type="text/css" href="index.css">
-</head>
+  <head>
+    <title>Pirate Panic</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="index.css" />
+  </head>
 
-<body>
+  <body>
     <div id="MainStatus" class="element">
-	    <p>Meal size: <span id="meal_size"></span></p>
-        <p>Speed: <span id="speed"></span></p>
-        <p>Days at Sea: <span id="days"></span></p>
+      <p>Food: <span id="food"></span></p>
+      <p>Water: <span id="water"></span></p>
+      <p>Money: <span id="money"></span></p>
+      <p>Health: <span id="health"></span></p>
+      <p>First Aid: <span id="first_aid"></span></p>
     </div>
     <div id="Weather" class="element">
-        <p>Weather: <span id="weather"></span></p>
+        <img id="weather_image" src="images/weather1.png">
     </div>
     <div id="Avatar" class="element">
-        <img id="avatar_image" src="images/parrot.png">
-        <ul>    
-            <li>Name: <span id="name"></span></li>
-            <li>Age: <span id="age"></span></li>
-            <li>Health: <span id="health"></span></li>
-            <li>Money: <span id="money"></span></li>
-        </ul>
+      <img id="avatar_image" src="images/profile1.png" />
+      <ul>
+        <li>Name: <span id="name"></span></li>
+        <li>Age: <span id="age"></span></li>
+        <li>Skills: <span id="skills"></span></li>
+      </ul>
     </div>
     <div id="Image" class="element">
-        <img id="main_image" src="images/main.png">
+      <img id="main_image" src="images/main.png" />
     </div>
-    <div id="Chat" class="element">        
-    </div>
+    <div id="Chat" class="element"></div>
     <div id="Options" class="element">
-        <p>I'll format these nicely later, pinky swear</p>
-	    <button>Thing1</button>
-	    <button>Thing2</button>
-	    <button>Thing3</button>
-	    <button>Thing4</button>
+      <p>I'll format these nicely later, pinky swear</p>
+      <button>Thing1</button>
+      <button>Thing2</button>
+      <button>Thing3</button>
+      <button>Thing4</button>
     </div>
-    <div id="People" class="element">I cant remember what we were putting here?</div>
+    <div id="People" class="element">
+      <div style="text-align: center">
+        <img src="images/Profile2.png" style="width: 100px; height: 100px" />
+        <div style="font-weight: bold">Age: 25</div>
+        <div style="font-weight: bold">Name: Mia</div>
+        <div style="font-weight: bold">Health: 100</div>
+        <div>Hi, nice to meet you!</div>
+      </div>
+      <div style="text-align: center">
+        <img src="images/Profile3.png" style="width: 100px; height: 100px" />
+        <div style="font-weight: bold">Age: 30</div>
+        <div style="font-weight: bold">Name: Shark</div>
+        <div style="font-weight: bold">Health: 100</div>
+        <div>Let's do it</div>
+      </div>
+      <div style="text-align: center">
+        <img src="images/Profile4.png" style="width: 100px; height: 100px" />
+        <div style="font-weight: bold">Age: 35</div>
+        <div style="font-weight: bold">Name: Good Luck</div>
+        <div style="font-weight: bold">Health: 100</div>
+        <div>Dont worry, I am lucky :)</div>
+      </div>
+    </div>
     <div id="Supplies" class="element">
-	    <ul>
-		    <li>Food: <span id="food"></span></li>
-            <li>Water: <span id="water"></span></li>
-	    </ul>
+      <ul>
+        <li>Days at sea: <span id="days"></span></li>
+      </ul>
     </div>
     <div id="Map" class="element">
-        <img id="map_image" src="images/map.png">
+      <img id="map_image" src="images/map.png" />
     </div>
     <script type="text/javascript" src="index.js"></script>
-</body>
+  </body>
 </html>
