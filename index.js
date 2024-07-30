@@ -6,6 +6,7 @@ class State {
         this.food = 0;
         this.water = 70;
         this.age = 60;
+        this.weather = "calm"
         this.skills = "";
         this.name = "";
         this.money = 0;
@@ -64,8 +65,12 @@ function update_image(image_id,path_to_image) {
 
 let game_state = new State()  
 
-for (const [key, value] of Object.entries(game_state)) {
-    game_state.update(key,value);
+update_values()
+
+function update_values() {
+    for (const [key, value] of Object.entries(game_state)) {
+        game_state.update(key,value);
+    }
 }
 
 function start_game() {
@@ -91,6 +96,13 @@ function end_game() {
     } else {
         add_computer_message("Something went wrong")
     }
+    clear_buttons()
+    add_button("Restart", restart_game)
+}
+
+function restart_game() {
+    clear_all_messages()
+    game_setup()
 }
 
 function fish() {
@@ -233,6 +245,8 @@ function start_button() {
 }
 
 function game_setup() {
+    game_state = new State()
+    update_values()
     prompt_box("What is your name, stranger?","name")
     prompt_box("How old are you?","age")
     add_computer_message(`It's nice to meet you ${game_state.name}`)
