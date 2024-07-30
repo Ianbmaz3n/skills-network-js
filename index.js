@@ -84,10 +84,12 @@ function start_game() {
 
 function end_game() {
     if (game_state.health <=0) {
-        add_computer_message("Every day your families head to the docks to your arrival, but as time passes it becomes clear that something has gone disastrously wrong and you are never coming home.")
+        update_image("main_image","images/failure.jpg")
+        add_computer_message("Every day your families head to the docks to await your arrival, but as time passes it becomes clear that something has gone disastrously wrong and you are never coming home.")
         add_computer_message("You have been lost at sea.")
         add_computer_message("GAME OVER")
     } else if (game_state.distance_remaining <=0) {
+        update_image("main_image","images/success.png")
         add_computer_message("A cry of 'Land Ho' shatters dawn's early light as you are roused from your slumber. Sprinting to the deck you can just make our the smudge of land on the horrizon.")
         add_computer_message("It takes a few hours, but by noon you are docking, and the rest of the day is lost to a whirl of celebration and merriment")
         add_computer_message("CONGRATULATIONS you have made it")
@@ -119,7 +121,7 @@ function row() {
 
 function new_day_recalc() {
     if (game_state.food <= 0 || game_state.water <= 0) {
-        game_state.update("health", Math.max(0, game_state.health - 5))
+        game_state.update("health", Math.max(0, game_state.health - 50))
     }
     game_state.update("days",game_state.days + 1)
     game_state.update("distance_remaining",Math.max(0,game_state.distance_remaining - 10))
@@ -128,6 +130,11 @@ function new_day_recalc() {
 }
 
 function start_day() {
+    if (game_state.distance_remaining < 30) {
+        update_image("map_image","images/map_3.png")
+    } else if (game_state.distance_remaining < 60) {
+        update_image("map_image","images/map_2.png")
+    }
     if (game_state.distance_remaining > 0 && game_state.health > 0)  {
         new_day_recalc()
         add_computer_message(`It is day ${game_state.days} of your journey, the weather is ${game_state.weather}`)
@@ -169,7 +176,7 @@ function stats_speed() {
 
 function stats_luck() {
     game_state.update("skills","luck")
-    game_state.update("food",100)
+    game_state.update("food",60)
     game_state.update("money",20000)
     game_state.update("health",100)
     shop()
@@ -177,7 +184,7 @@ function stats_luck() {
 
 function stats_kindness() {
     game_state.update("skills","kindness")
-    game_state.update("food",200)
+    game_state.update("food",90)
     game_state.update("money",5000)
     game_state.update("health",50)
     shop()
