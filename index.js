@@ -1,7 +1,5 @@
 class State {
     constructor() {        
-        this.meal_size = "Med";
-        this.speed = "Fast";
         this.days = 0;
         this.first_aid = 0
         this.health = 0;
@@ -9,9 +7,8 @@ class State {
         this.water = 70;
         this.age = 60;
         this.skills = "";
-        this.name = "Polly";
+        this.name = "";
         this.money = 0;
-        this.weather = "Calm";
         this.distance_remaining =100 //nautical miles
     }
 
@@ -152,7 +149,6 @@ function clear_buttons() {
 
 function stats_speed() {
     game_state.update("skills","speed")
-    game_state.update("speed",100)
     game_state.update("food",40)
     game_state.update("money",10000)
     game_state.update("health",50)
@@ -161,7 +157,6 @@ function stats_speed() {
 
 function stats_luck() {
     game_state.update("skills","luck")
-    game_state.update("speed",60)
     game_state.update("food",100)
     game_state.update("money",20000)
     game_state.update("health",100)
@@ -170,7 +165,6 @@ function stats_luck() {
 
 function stats_kindness() {
     game_state.update("skills","kindness")
-    game_state.update("speed",60)
     game_state.update("food",200)
     game_state.update("money",5000)
     game_state.update("health",50)
@@ -245,5 +239,3 @@ function game_setup() {
     add_computer_message(`Please choose which skills you will have.`)
     add_stats()
 }
-
-game_setup()
