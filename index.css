@@ -23,6 +23,12 @@ audio {
     padding: 5px;
 }
 
+button {
+    padding: 5px;
+    margin: 5px;
+    height: 35px;
+}
+
 img {
     border-radius: 5px;
     width: 100%;
@@ -103,6 +109,8 @@ div {
 
 #Options {
     grid-area: Options;
+    display: flex;
+    flex-direction: row-reverse;
 }
 
 #weather_image {
