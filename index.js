@@ -233,9 +233,9 @@ function buy_aid_ten() {
     if (game_state.money >= 500) {
         game_state.update("first_aid",game_state.first_aid + 10 )
         game_state.update("money",game_state.money - 500 )    
-        add_computer_message("You buy 10 first aid")
+        add_player_message("You buy 10 first aid")
     } else {
-        add_computer_message("You don't have enough money to buy 10 first aid")
+        add_player_message("You don't have enough money to buy 10 first aid")
     }
 }
 
