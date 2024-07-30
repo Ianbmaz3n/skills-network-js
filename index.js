@@ -103,6 +103,8 @@ function end_game() {
 }
 
 function restart_game() {
+    update_image("main_image","images/main.png")
+    update_image("map_image","images/map_1.png")
     clear_all_messages()
     game_setup()
 }
