@@ -194,8 +194,8 @@ function shop() {
     clear_buttons()
     add_button("Buy food (30g)", buy_food)
     add_button("Buy first aid (50g)", buy_aid)
-    add_button("Buy 10 food (300g)", buy_aid_ten)
-    add_button("Buy 10 first aid (500g)", buy_food_ten)
+    add_button("Buy 10 food (300g)", buy_food_ten)
+    add_button("Buy 10 first aid (500g)", buy_aid_ten)
     add_button("Start Journey", start_game)
 }
 
@@ -231,7 +231,7 @@ function buy_food_ten() {
 
 function buy_aid_ten() {
     if (game_state.money >= 500) {
-        game_state.update("food",game_state.food + 10 )
+        game_state.update("first_aid",game_state.first_aid + 10 )
         game_state.update("money",game_state.money - 500 )    
         add_computer_message("You buy 10 first aid")
     } else {
