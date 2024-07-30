@@ -108,15 +108,15 @@ function restart_game() {
 }
 
 function fish() {
+    start_day()
     game_state.update("food",game_state.food + 25)
     add_player_message("You catch some fish (+ 25 food)")
-    start_day()
 }
 
 function row() {
+    start_day()
     game_state.update("distance_remaining",Math.max(0,game_state.distance_remaining - 5))
     add_player_message("You spend the day rowing to reach your destination faster")
-    start_day()
 }
 
 function new_day_recalc() {
