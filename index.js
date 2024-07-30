@@ -140,6 +140,11 @@ function add_button(text,func) {
     button.addEventListener ("click", func);
 }
 
+function prompt_box(text,value) {
+    let input = prompt(text)
+    game_state.update(value,input)
+}
+
 function clear_buttons() {
     document.getElementById("Options").innerHTML = ""
 }
@@ -230,12 +235,9 @@ function start_button() {
 }
 
 function game_setup() {
-    add_computer_message("hello, my name is Pop. What is your name, stranger?")
-    //get name
-    add_computer_message(`Nice to meet you ${name}`)
-    add_computer_message(`How old are you?`)    
-    //get age
-    add_computer_message(`Thank you for providing you age ${name}.`)
+    prompt_box("What is your name, stranger?","name")
+    prompt_box("How old are you?","age")
+    add_computer_message(`It's nice to meet you ${game_state.name}`)
     add_computer_message(`Please choose which skills you will have.`)
     add_stats()
 }
