@@ -8,6 +8,7 @@ class State {
         this.food = 0;
         this.water = 70;
         this.age = 60;
+        this.skills = "";
         this.name = "Polly";
         this.money = 0;
         this.weather = "Calm";
@@ -150,6 +151,7 @@ function clear_buttons() {
 }
 
 function stats_speed() {
+    game_state.update("skills","speed")
     game_state.update("speed",100)
     game_state.update("food",40)
     game_state.update("money",10000)
@@ -158,6 +160,7 @@ function stats_speed() {
 }
 
 function stats_luck() {
+    game_state.update("skills","luck")
     game_state.update("speed",60)
     game_state.update("food",100)
     game_state.update("money",20000)
@@ -166,6 +169,7 @@ function stats_luck() {
 }
 
 function stats_kindness() {
+    game_state.update("skills","kindness")
     game_state.update("speed",60)
     game_state.update("food",200)
     game_state.update("money",5000)
