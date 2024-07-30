@@ -112,7 +112,7 @@ function fish() {
 }
 
 function row() {
-    game_state.update("distance_remaining",game_state.distance_remaining - 5)
+    game_state.update("distance_remaining",Math.max(0,game_state.distance_remaining - 5))
     add_player_message("You spend the day rowing to reach your destination faster")
     start_day()
 }
@@ -122,7 +122,7 @@ function new_day_recalc() {
         game_state.update("health", Math.max(0, game_state.health - 5))
     }
     game_state.update("days",game_state.days + 1)
-    game_state.update("distance_remaining",game_state.distance_remaining - 10)
+    game_state.update("distance_remaining",Math.max(0,game_state.distance_remaining - 10))
     game_state.update("food",Math.max(0, game_state.food - 10))
     game_state.update("water",Math.max(0, game_state.water - 10))
 }
